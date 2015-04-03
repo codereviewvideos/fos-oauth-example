@@ -1,0 +1,33 @@
+security:
+
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+
+    providers:
+        in_memory:
+            memory:
+                users:
+                    rest_user: { password: password123, roles: ['ROLE_API_USER'] }
+
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        our_get_artists_firewall:
+            pattern: ^/
+            anonymous: true
+            http_basic:
+                provider: in_memory
+            methods: [GET]
+
+        our_everything_else_artists_firewall:
+            pattern: ^/
+            anonymous: false
+            http_basic:
+                provider: in_memory
+
+    access_control:
+        - { path: ^/api/artists/, roles: ROLE_API_USER }
+        - { path: ^/api/artists, roles: IS_AUTHENTICATED_ANONYMOUSLY }
