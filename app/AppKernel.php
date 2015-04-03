@@ -27,6 +27,7 @@ class AppKernel extends Kernel
 
 
             new CodeReview\RestBundle\CodeReviewRestBundle(),
+            new CodeReview\OAuthServerBundle\CodeReviewOAuthServerBundle(),
             new CodeReview\UserBundle\CodeReviewUserBundle(),
         );
 
