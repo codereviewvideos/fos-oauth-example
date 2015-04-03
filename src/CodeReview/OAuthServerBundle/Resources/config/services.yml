@@ -1,0 +1,4 @@
+services:
+#    code_review_o_auth_server.example:
+#        class: CodeReview\OAuthServerBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

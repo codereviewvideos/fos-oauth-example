@@ -80,6 +80,15 @@ fos_user:
     user_class: CodeReview\UserBundle\Entity\User
 
 
+fos_oauth_server:
+    db_driver:           orm
+    client_class:        CodeReview\OAuthServerBundle\Entity\Client
+    access_token_class:  CodeReview\OAuthServerBundle\Entity\AccessToken
+    refresh_token_class: CodeReview\OAuthServerBundle\Entity\RefreshToken
+    auth_code_class:     CodeReview\OAuthServerBundle\Entity\AuthCode
+    service:
+        user_provider: fos_user.user_manager
+
 
 fos_rest:
     view:
