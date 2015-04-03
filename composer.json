@@ -8,7 +8,7 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "2.5.*",
+        "symfony/symfony": "2.6.*",
         "doctrine/orm": "~2.2,>=2.2.3",
         "doctrine/doctrine-bundle": "~1.2",
         "twig/extensions": "~1.0",
@@ -22,7 +22,10 @@
         "doctrine/doctrine-fixtures-bundle": "2.2.*@dev",
         "friendsofsymfony/rest-bundle": "1.5.*@dev",
         "jms/serializer-bundle": "0.13.*@dev",
-        "nelmio/api-doc-bundle": "2.7.*@dev"
+        "nelmio/api-doc-bundle": "2.7.*@dev",
+
+
+        "friendsofsymfony/user-bundle": "2.0.*@dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",

@@ -73,6 +73,14 @@ sensio_framework_extra:
     view:    { annotations: false }
 
 
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: CodeReview\UserBundle\Entity\User
+
+
+
 fos_rest:
     view:
         view_response_listener: 'force'
