@@ -22,14 +22,14 @@ security:
 
         oauth_authorize:
             pattern:    ^/oauth/v2/auth
-            security:   false
-            # Add your favorite authentication process here
+            provider:   fos_userbundle
+            http_basic: true
 
-        api:
-            pattern:    ^/api
-            fos_oauth:  true
-            stateless:  true
-            anonymous:  false # can be omitted as its default value
+#        api:
+#            pattern:    ^/api
+#            fos_oauth:  true
+#            stateless:  true
+#            anonymous:  false # can be omitted as its default value
 
 
 

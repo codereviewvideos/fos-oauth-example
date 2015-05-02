@@ -88,6 +88,11 @@ fos_oauth_server:
     auth_code_class:     CodeReview\OAuthServerBundle\Entity\AuthCode
     service:
         user_provider: fos_user.user_manager
+        options:
+            access_token_lifetime: 3600
+            refresh_token_lifetime: 1209600
+            auth_code_lifetime: 30
+
 
 
 fos_rest:
