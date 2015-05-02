@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use FOS\RestBundle\Controller\Annotations\View;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class ArtistController extends FOSRestController
 {
@@ -38,6 +39,14 @@ class ArtistController extends FOSRestController
      */
     public function getArtistAction($id)
     {
+        $token = $this->get('security.token_storage')->getToken();
+        $user = $this->getUser(); /** @var $user \CodeReview\UserBundle\Entity\User */
+//        var_dump($token);
+
+        if (false === $user->hasRole('ROLE_AAA')) {
+            throw new AccessDeniedException();
+        }
+
         return $this->getOr404($id);
     }
 
